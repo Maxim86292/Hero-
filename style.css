@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(185, 28, 28, 0.2), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(245, 158, 11, 0.18), transparent 22%),
+    linear-gradient(135deg, #0b0f17 0%, #141b24 45%, #120d14 100%);
+  color: #f9f3e7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.mist {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+}
+
+.mist-one {
+  width: 360px;
+  height: 360px;
+  background: rgba(185, 28, 28, 0.26);
+  top: 12%;
+  left: 10%;
+}
+
+.mist-two {
+  width: 420px;
+  height: 420px;
+  right: 8%;
+  bottom: 8%;
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.crest {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.12), 0 0 30px rgba(212, 175, 55, 0.12);
+  opacity: 0.6;
+}
+
+.game-shell {
+  position: relative;
+  z-index: 1;
+  width: min(980px, 92%);
+  padding: 26px 28px 30px;
+  background: rgba(18, 18, 20, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 26px;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.1),
+    0 28px 80px rgba(0, 0, 0, 0.65),
+    inset 0 0 28px rgba(212, 175, 55, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.badge,
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.badge {
+  background: rgba(212, 175, 55, 0.09);
+  color: #f4d35e;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.status {
+  background: rgba(185, 28, 28, 0.12);
+  color: #f8c7b2;
+  border: 1px solid rgba(185, 28, 28, 0.42);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 26px;
+  align-items: center;
+}
+
+.hero-copy {
+  padding: 18px 10px 12px 6px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #d9a441;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.9rem, 5vw, 5.5rem);
+  line-height: 0.96;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f5e3a3;
+  text-shadow:
+    0 0 12px rgba(244, 211, 94, 0.5),
+    0 0 22px rgba(180, 122, 35, 0.2);
+}
+
+.subtitle {
+  margin: 18px 0 0;
+  max-width: 580px;
+  color: #e5dac5;
+  font-size: clamp(1.06rem, 1.7vw, 1.32rem);
+}
+
+.cta-row {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: linear-gradient(135deg, #d4af37, #b7791f);
+  color: #1a1206;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
+}
+
+.secondary {
+  background: rgba(128, 84, 46, 0.12);
+  color: #f3d7a7;
+  border: 1px solid rgba(180, 122, 35, 0.5);
+}
+
+.quest-panel {
+  padding: 22px 20px 18px;
+  background: rgba(29, 24, 22, 0.84);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 22px;
+  box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.04);
+}
+
+.panel-header {
+  margin-bottom: 18px;
+  color: #f4d35e;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-list {
+  margin: 0;
+  padding-left: 22px;
+  color: #f3dfbf;
+  line-height: 2.1;
+  font-size: 1rem;
+}
+
+.stats {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+.stat-box {
+  padding: 16px 14px;
+  border-radius: 16px;
+  background: rgba(35, 31, 27, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  text-align: center;
+}
+
+.stat-box span {
+  display: block;
+  color: #d9a441;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stat-box strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.18rem;
+  color: #f9f3e7;
+}
+
+@media (max-width: 760px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding: 10px 4px 0;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .game-shell {
+    padding: 20px 16px 20px;
+  }
+
+  .cta-row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
